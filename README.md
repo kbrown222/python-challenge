@@ -1,68 +1,46 @@
-Python Challenge
-Project Summary
-Create a database of Pokemon characters with “biological” data, as well as competitive data (such as popular moves, held items, etc), in order to please both the casual enjoyer as well as the competitive player, and even to help those looking to break into the metagame in team building. This will be done by creating a set of tables with information on the relevant Pokemon.
+Python Challenge - Homework # 3
 
-System Requirements
-Jupyter notebook
+Project Summary - This project has been split into two different challenges to use new Python skills.
+
+    *The first challenge is to create a Python script to analyze the financial records of a company using a set of financial data called [budget_data.csv].
+
+    *The second challenge is to help helping a small, rural town modernize its vote counting process.
+
+
+System Requirements:
+  Python files were created using VSCode
+
 Python dictionaries
 sqlalchemy
 psycopg2
 pandas
 Misc. files
 db_pw (python file with database password)
-Resources
-GitHub Repository
 
-Database: PostgreSQL/pgAdmin
-Datasets:
-Complete Competitive Pokémon Database (May 2022) 08072022
-The Complete Pokemon Dataset 2017
-Group Members
-Kelly Brown
-Subodh Chintawar
-Gautam Iyer
-Leon Lee
-Ami Patel
-Aimee Vu
-William Tecchio
-General Tasks
-Extract
+File Setup:
+Two folders for each portion of the challenge:
+PyBank
+PyPoll
 
-2 CSV files (pokemon.csv and df_pokemon.csv) were extracted into Jupyter
+Each of the folders contains the following:
+  * `main.py` - These files contain the main script for each analysis.
+  * A `Resources` folder that contains the CSV file used in each main.py file.
+  * An `analysis` folder that contains the text file that has the results from the analysis completed.
 
-1 CSV file (bridge_pokemon_ability_MAY_HAS.csv) was imported directly into postgres.
-
-Transform
-
-Data Cleaning and Normalization
-
-Build relationship within different datasets
-
-Primary keys used to build relationships were nationalDexNumber and name
-
-Define and build key statistics
-
-See Tables section below
-
-Load
-
-PostgreSQL
-Tables
-Tables created are:
-
-Table 1 - Pokedex (Biological Information)
-Table 2 - Stats
-Table 3 - Abilities
-Table ERD
+For the PyBank Analysis:
+  * The set of financial data used is called[budget_data.csv](PyBank/Resources/budget_data.csv). 
+        -The dataset is composed of two columns: "Date" and "Profit/Losses".
+  * The csv file was imported and data was read using csv reader.
+  * The records were analyzed to calculate the following:
+        #The total number of months included in the dataset
+        #The net total amount of "Profit/Losses" over the entire period
+        #The changes in "Profit/Losses" over the entire period, and then the average of those changes
+        #The greatest increase in profits (date and amount) over the entire period
+        #The greatest decrease in profits (date and amount) over the entire period
+  * 
+  * Analysis of the data prints to the terminal and exports to a text file with the results in the Analysis folder. This includes
 
 
-This image was generated using QuickDB.
-
-The code that was used to generate this table schema can be found here, while the generated sql query can be found here.
-
-Transformation Process
-Table 1: Pokedex
-For this table, the files pokemon.csv and df_pokemon.csv were used. To start off, the data is extracted from pokemon.csv into a Pandas dataframe. Because the original datasource had extra columns from what was needed for the database, only the necessary columns were pulled.
 
 After analyzing the data, the following issues were identified:
 
@@ -109,20 +87,53 @@ List of Pokemon name and number of abilities they have using the join on Pokedex
 List of pokemon ablities and number of pokemon using it using the join on Pokedex and Abilities tables and grouped them by ability
 
 
-The queries can be found here.
 
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
+## PyPoll Instructions
+
+In this challenge, you are tasked with helping a small, rural town modernize its vote counting process.
+
+You will be given a set of poll data called [election_data.csv](PyPoll/Resources/election_data.csv). The dataset is composed of three columns: "Voter ID", "County", and "Candidate". Your task is to create a Python script that analyzes the votes and calculates each of the following:
+
+* The total number of votes cast
+
+* A complete list of candidates who received votes
+
+* The percentage of votes each candidate won
+
+* The total number of votes each candidate won
+
+* The winner of the election based on popular vote.
+
+Your analysis should look similar to the following:
+
+
+  ```text
+  Election Results
+  -------------------------
+  Total Votes: 369711
+  -------------------------
+  Charles Casper Stockham: 23.049% (85213)
+  Diana DeGette: 73.812% (272892)
+  Raymon Anthony Doane: 3.139% (11606)
+  -------------------------
+  Winner: Diana DeGette
+  -------------------------
+  ```
+
+In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+
+## Hints and Considerations
+
+* Consider what you've learned so far. You've learned how to import modules like `csv`; to read and write files in various formats; to store contents in variables, lists, and dictionaries; to iterate through basic data structures; and to debug along the way. Using what you've learned, try to break down your tasks into discrete mini-objectives. 
+
+* The datasets for these challenges are quite large. This was done purposefully, as it showcases one of the limits of Excel-based analysis. As data analysts, our first instinct is often to go straight to Excel, but creating scripts in Python can provide us with more robust options for handling big data.
+
+* Write one script for each dataset provided. Run your script separately to make sure that the code works for its respective dataset.
+
+* Feel encouraged to work in groups, but don't shortchange yourself by copying someone else's work. You get what you put in, and the art of programming is extremely unforgiving to those who don't do their own work. 
+
+* Start early, and reach out for help when you need it! Be sure to identify specific questions for your instructors and TAs so that they understand your thought process and can provide targeted guidance.
+
+* Always commit your work and back it up with pushes to GitHub or GitLab. You don't want to lose hours of your work! Also make sure that your repo has a detailed   `README.md` file. 
 

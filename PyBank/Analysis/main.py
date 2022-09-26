@@ -35,6 +35,7 @@ with open(budget_csv) as csvfile:
     total_months += 1
     total_net += int(first_row[1])
     previous_net = int(first_row[1])
+
     # Read each row of data after the header
     for row in csvreader:
         #print(row)
@@ -46,12 +47,6 @@ with open(budget_csv) as csvfile:
         net_change_list += [net_change]  
         month_of_change += [row[0]]
 
-    # Define the function and have it accept the 'budget_data' as its sole parameter
-#def pyBank(budget_data):
-    # Assign budget_data values to variables for Date and Profit/Losses
-    #date = str(budget_data[0])
-    #profitLosses = int(budget_data[1])
-   
 #The total number of months included in the dataset
 
     

@@ -1,23 +1,4 @@
 
-# You will give a set of financial data called [budget_data.csv](PyBank/Resources/budget_data.csv). 
-# The dataset is composed of two columns: "Date" and "Profit/Losses".
-# Analyzes the records to calculate each of the following:
-    #The total number of months included in the dataset
-    #The net total amount of "Profit/Losses" over the entire period
-    #The changes in "Profit/Losses" over the entire period, and then the average of those changes
-    #The greatest increase in profits (date and amount) over the entire period
-    #The greatest decrease in profits (date and amount) over the entire period
-
-#Analysis text file should look like:
-        #Financial Analysis
-        #----------------------------
-        #Total Months: 86
-        #Total: $22564198
-        #Average Change: $-8311.11
-        #Greatest Increase in Profits: Aug-16 ($1862002)
-        #Greatest Decrease in Profits: Feb-14 ($-1825558)
-  #final script should both print the analysis to the terminal & export a text file with the results
-
 # import the os module to create file paths across operating systems
 import os
 
@@ -94,6 +75,7 @@ print(f"{sum(net_change_list)}")
 print(f"{len(net_change_list)}")
      #Prints the Financial Analysis
 
+#Format analysis and add explanations of each calculation.
 output=(f'''
 Financial Analysis
 ----------------------------
@@ -104,19 +86,6 @@ Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]:,.2
 Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]:,.2f})
 ''')
 print(output)
-    #print("Financial Analysis")
-    #print Total Months: 86
-    #print("Total Months:" + months)
-    #print Total: $22564198
-    #print("Total" + profits)
-    #print Average Change: $-8311.11
-    #print("Average Change:" + avgChange)
-    #print Greatest Increase in Profits: Aug-16 ($1862002)
-    #print("Greatest Increase in Profits:" + date + profits)
-    #print Greatest Decrease in Profits: Feb-14 ($-1825558)
-    #print("Greatest Decrease in Profits:" + date + profits)
-
-
 
     #final script should both print the analysis to the terminal & export a text file with the results
 with open(file_to_output, "w") as text_file:
